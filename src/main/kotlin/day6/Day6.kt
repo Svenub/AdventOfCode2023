@@ -30,8 +30,7 @@ fun solve1(input: List<String>): Int {
     val races = createRaces(input)
     val wins = races.map { calcNumberOfWins(it.time, it.record) }
     var margin = 1
-    for(win in wins) margin *= win
-
+    for (win in wins) margin *= win
 
     return margin
 
@@ -41,7 +40,7 @@ fun solve2(input: List<String>): Int {
     val time = input[0].split(":")[1].trim().replace("  +".toRegex(), "").toInt()
     val record = input[1].split(":")[1].trim().replace("  +".toRegex(), "").toLong()
     val race = Race(time, record)
-    val wins = calcNumberOfWins(race.time, race.record)
+
     return calcNumberOfWins(race.time, race.record)
 }
 
